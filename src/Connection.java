@@ -54,19 +54,14 @@ public class Connection{
 		con.setRequestProperty("Content-Type", "application/json; charset=UTF-8");
 		con.setRequestProperty("User-Agent", "Mozilla/5.0");
 
-		// String json = "{\"token\":\"6fb2f287ac07a6db27ff145186e252e6\",\"github\":\"https://github.com/rafael-reyes/code2040_api\"}";
-
 		// For POST
 		con.setDoOutput(true);
 		OutputStream os = con.getOutputStream();
-		// os.write(json.getBytes("UTF-8"));
 		os.write(constructJsonObj(param).getBytes("UTF-8"));
 		os.flush();
 		os.close();
 
 		int responseCode = con.getResponseCode();
-		System.out.println("POST Response Code : " + responseCode);
-
 		if (responseCode == HttpURLConnection.HTTP_OK) { //success
 			BufferedReader in = new BufferedReader(
                                 new InputStreamReader(
