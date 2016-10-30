@@ -16,8 +16,9 @@ import org.json.JSONObject;
 
 public class Connection{
 
-
+	private static String token;
 	public static void main(String[] args) throws IOException, JSONException, ParseException{
+		token = "6fb2f287ac07a6db27ff145186e252e6";
 		step1();
 		step2();
 		step3();
@@ -27,7 +28,7 @@ public class Connection{
 
 	private static void step1() throws IOException, JSONException { 
 		JSONObject param = new JSONObject();
-		param.put("token","6fb2f287ac07a6db27ff145186e252e6");
+		param.put("token",token);
 		param.put("github","https://github.com/rafael-reyes/code2040_api");
 
 		connect("http://challenge.code2040.org/api/register",param);
@@ -35,7 +36,7 @@ public class Connection{
 
 	private static void step2() throws IOException, JSONException { 
 		JSONObject param = new JSONObject();
-		param.put("token","6fb2f287ac07a6db27ff145186e252e6");
+		param.put("token",token);
 
 		String res = connect("http://challenge.code2040.org/api/reverse",param);
 		
@@ -45,7 +46,7 @@ public class Connection{
 
 	private static void step3() throws IOException, JSONException { 
 		JSONObject param = new JSONObject();
-		param.put("token","6fb2f287ac07a6db27ff145186e252e6");
+		param.put("token",token);
 
 		String res = connect("http://challenge.code2040.org/api/haystack",param);
 		JSONObject obj = new JSONObject(res);
@@ -63,7 +64,7 @@ public class Connection{
 	
 	private static void step4() throws IOException, JSONException { 
 		JSONObject param = new JSONObject();
-		param.put("token","6fb2f287ac07a6db27ff145186e252e6");
+		param.put("token",token);
 
 		String res = connect("http://challenge.code2040.org/api/prefix",param);
 		JSONObject obj = new JSONObject(res);
@@ -84,7 +85,7 @@ public class Connection{
 	
 	private static void step5() throws IOException, JSONException, ParseException { 
 		JSONObject param = new JSONObject();
-		param.put("token","6fb2f287ac07a6db27ff145186e252e6");
+		param.put("token",token);
 
 		String res = connect("http://challenge.code2040.org/api/dating",param);
 		JSONObject obj = new JSONObject(res);
